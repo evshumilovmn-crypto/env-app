@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: env-app-deployment
+spec:
+  selector:
+    matchLabels:
+      app: env-app
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: env-app
+    spec:
+      containers:
+      - name: registry
+        image: env-app-image:latest
+        # Set imagePullPolicy to IfNotPresent or Never to prevent Kubernetes from trying to pull from a remote (e.g., Docker Hub) registry
+        imagePullPolicy: IfNotPresent
+      
+

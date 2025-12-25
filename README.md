@@ -1,5 +1,22 @@
 # EnvApp
 
+minikube dashboard
+
+kubectl expose deployment env-app-deployment --type=LoadBalancer --port=8080
+minikube service env-app-deployment
+
+minikube addons enable registry
+kubectl port-forward --namespace kube-system service/registry 5000:80
+
+kubectl apply -f my-deployment.yaml
+
+-------------
+docker tag env-app-image evshumilov/dev:v1.0
+docker push evshumilov/dev:v1.0
+
+
+
+
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.3.
 
 ## Development server
