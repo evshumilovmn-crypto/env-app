@@ -4,7 +4,7 @@ set -ea
 
 echo "Env file creating..."
 
-cat > /var/lib/dev/env-app/.env <<EOF
+cat > /usr/src/app/.env <<EOF
 NG_APP_API_URL=$NG_APP_API_URL
 NG_APP_VERSION=$NG_APP_VERSION
 NG_APP_HOSTNAME=$NG_APP_HOSTNAME

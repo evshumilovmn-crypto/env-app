@@ -16,11 +16,13 @@ export class App implements OnInit {
   protected readonly title = signal('env-app');
   api_url?: string;
   env?: string;
+  env_process?: string;
 
 
   ngOnInit(): void {
     this.api_url = JSON.stringify(environment);
-    //this.env = JSON.stringify(process.env);
+    this.env = JSON.stringify(import.meta.env);
+    this.env_process = JSON.stringify(process.env);
   }
 
 }
